@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "front-end-c82b9"
+  },
+  "targets": {
+    "front-end-c82b9": {
+      "hosting": {
+        "frontend": [
+          "front-end-c82b9"
+        ]
+      }
+    }
   }
 }
