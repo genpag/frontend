@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="app.componet.css" media="screen" />
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="todolist not-done">
+        <h1>Lista de tarefas</h1>
+        <form class="form-inline">
+          <input type="text" class="form-control add-todo"  name="item" placeholder="Adicionar">
+          <button id="checkAll" class="btn btn-success ml-2" (click)="addToList()">Adicionar</button>
+        </form>
+        <hr>
+        <ul id="sortable" class="list-unstyled">
+          <li class="ui-state-default">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="" (click)="doItem(i)" />Tarefa 1</label>
+            </div>
+          </li>
+          <li class="ui-state-default">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="" (click)="doItem(i)" />Tarefa 2</label>
+            </div>
+          </li>
+        </ul>
+        <h2>Items concluidos</h2>
+        <ul id="sortable" class="list-unstyled">
+          <li class="ui-state-default" *ngFor="let item of todoList; let i = index">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked /><span style="text-decoration:line-through;">
+                  Atualizar o trello
+                </span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
