@@ -1,0 +1,19 @@
+<mat-card>
+  <form [formGroup]=formTask  (ngSubmit)='save()'>
+    <mat-form-field>
+      <mat-label>Titulo</mat-label>
+      <input matInput formControlName='title'>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName='descripition'></textarea>
+    </mat-form-field>
+    <button type="submit" mat-raised-button [disabled]="!formTask.valid">Adicionar</button>
+  </form>
+</mat-card>
+
+<mat-divider></mat-divider>
+<div *ngFor="let task of tasks">
+  <app-task [data]=task></app-task>
+  <mat-divider></mat-divider>
+</div>

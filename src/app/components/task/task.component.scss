@@ -1,0 +1,18 @@
+.example-full-width {
+  width: 100%;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/neru.jpg');
+  background-size: cover;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  width: 50%;
+  margin: 1% 25%;
+}
+
