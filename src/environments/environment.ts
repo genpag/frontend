@@ -13,6 +13,16 @@ export const environment = {
     appId: "1:790920220344:web:c89726580e318b441f2e4d",
     measurementId: "G-3ZDTGB9WVP"
   }
+
+  // firebase: {
+  //   apiKey: "AIzaSyB4WG-hEx7IskMzjeoFjjO2RgL3MdoXfxQ",
+  //   authDomain: "teste-tolist.firebaseapp.com",
+  //   projectId: "teste-tolist",
+  //   storageBucket: "teste-tolist.appspot.com",
+  //   messagingSenderId: "296891157527",
+  //   appId: "1:296891157527:web:01c09981db9c3262c62052",
+  //   measurementId: "${config.measurementId}"
+  // }
 };
 
 /*
