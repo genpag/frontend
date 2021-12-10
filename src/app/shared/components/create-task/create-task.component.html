@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <div class="container">
+    <h2 class="text-center"><strong>Cadastre uma Task</strong></h2>
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input type="text" class="form-control" formControlName="nome" />
+      <app-control-error [control]="form.controls.nome"></app-control-error>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Descrição</label
+      >
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        formControlName="descricao"
+      ></textarea>
+      <app-control-error
+        [control]="form.controls.descricao"
+      ></app-control-error>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <button mat-raised-button color="primary" (click)="createForm()">
+        Cadastrar
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="ngbActiveModal.close(false)"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</form>

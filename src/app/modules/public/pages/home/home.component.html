@@ -1,0 +1,89 @@
+<div class="container mt-5">
+  <button mat-raised-button color="primary" (click)="open()">
+    Cadastrar Task
+  </button>
+
+  <div class="row justify-content-evenly mt-5">
+    <div class="col-6">
+      <h4><strong>Tasks a Fazer</strong></h4>
+      <ng-container *ngFor="let item of tasks">
+        <ng-container *ngIf="item.data.concluido == false">
+          <mat-card>
+            <mat-card-title>
+              <div class="row justify-content-evenly">
+                <div class="col-10">
+                  {{ item.data.nome }}
+                </div>
+                <div class="col-2">
+                  <i class="bi bi-trash" (click)="delete(item.id)"></i>
+                </div>
+              </div>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <p>
+                <strong class="icon toDo">.</strong>
+                {{ item.data.concluido == false ? "A fazer" : "" }}
+              </p>
+            </mat-card-subtitle>
+            <div>
+              <p>{{ item.data.descricao }}</p>
+            </div>
+            <mat-card-actions>
+              <button mat-flat-button color="accent" (click)="Edit(item.id)">
+                Editar
+              </button>
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="finish(item.data, item.id)"
+              >
+                Concluído
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div class="col-6">
+      <h4><strong>Tasks Concluidas</strong></h4>
+      <ng-container *ngFor="let item of tasks">
+        <ng-container *ngIf="item.data.concluido == true">
+          <mat-card>
+            <mat-card-title>
+              <div class="row justify-content-evenly">
+                <div class="col-10">
+                  {{ item.data.nome }}
+                </div>
+                <div class="col-2">
+                  <i class="bi bi-trash"></i>
+                </div>
+              </div>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <p>
+                <strong class="icon done">.</strong>
+                {{ item.data.concluido == true ? "Concluído" : "" }}
+              </p>
+            </mat-card-subtitle>
+            <div>
+              <p>{{ item.data.descricao }}</p>
+            </div>
+            <mat-card-actions>
+              <button mat-flat-button color="accent" (click)="Edit(item.id)">
+                Editar
+              </button>
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="back(item.data, item.id)"
+              >
+                Voltar task
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
